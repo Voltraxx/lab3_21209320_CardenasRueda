@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class Console_21209320_CardenasRueda {
 	
 	// Atributos
+	
 	Scanner scanner = new Scanner(System.in);
 	int opcion;
 	
 	// Métodos
+	
+	
 	public void imprimirOpciones() {
 		
 		System.out.println("## Bienvenido al menú del sistema ##");
@@ -22,11 +25,10 @@ public class Console_21209320_CardenasRueda {
 		System.out.println();
 	}
 	
-	public void ingresarOpcion(){
-		do {
-			System.out.print("Ingrese su opción: ");
-			opcion = scanner.nextInt();
-		}while(opcion != 0);
+	public int ingresarOpcion(){
+		System.out.print("Ingrese su opción: ");
+		opcion = scanner.nextInt();
 		scanner.close();
-		}
+		return opcion;
+	}
 }
