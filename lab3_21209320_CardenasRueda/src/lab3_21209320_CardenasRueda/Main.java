@@ -17,6 +17,8 @@ public class Main {
 		switch(aux) {
 		case 1:
 			FileSystem_21209320_CardenasRueda sistema = new FileSystem_21209320_CardenasRueda(nombre);
+			Drive_21209320_CardenasRueda drive = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
+			sistema.addDrive(drive);
 			sistema.getSistema();
 			break;
 		case 0:
@@ -26,7 +28,6 @@ public class Main {
 			System.out.print("Esa opción no es válida");
 		}
 		scanner.close();
-		
 		
 	}
 }
