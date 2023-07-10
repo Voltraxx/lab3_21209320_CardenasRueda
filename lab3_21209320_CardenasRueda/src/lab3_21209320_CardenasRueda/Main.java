@@ -19,6 +19,12 @@ public class Main {
 			FileSystem_21209320_CardenasRueda sistema = new FileSystem_21209320_CardenasRueda(nombre);
 			Drive_21209320_CardenasRueda drive = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
 			sistema.addDrive(drive);
+			Drive_21209320_CardenasRueda drive2 = new Drive_21209320_CardenasRueda("D", "Hola", 1000);
+			sistema.addDrive(drive2);
+			Drive_21209320_CardenasRueda drive3 = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
+			sistema.addDrive(drive3);
+			Drive_21209320_CardenasRueda drive4 = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
+			sistema.addDrive(drive4);
 			sistema.getSistema();
 			break;
 		case 0:
