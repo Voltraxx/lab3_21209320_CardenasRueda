@@ -17,14 +17,14 @@ public class Main {
 		switch(aux) {
 		case 1:
 			FileSystem_21209320_CardenasRueda sistema = new FileSystem_21209320_CardenasRueda(nombre);
-			Drive_21209320_CardenasRueda drive = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
-			sistema.addDrive(drive);
-			Drive_21209320_CardenasRueda drive2 = new Drive_21209320_CardenasRueda("D", "Hola", 1000);
-			sistema.addDrive(drive2);
-			Drive_21209320_CardenasRueda drive3 = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
-			sistema.addDrive(drive3);
-			Drive_21209320_CardenasRueda drive4 = new Drive_21209320_CardenasRueda("C", "Hola", 1000);
-			sistema.addDrive(drive4);
+			sistema.addDrive("C", "Primer Drive", 1000000);
+			sistema.addDrive("D", "Segundo Drive", 200000);
+			sistema.addDrive("E", "Tercer Drive", 1000000);
+			sistema.addDrive("C", "Este drive no debería agregarse", 1000); //No debería agregarlo
+			sistema.register("Primer Usuario");
+			sistema.register("Usuario2");
+			sistema.register("Primer Usuario"); //No debería agregarlo
+			sistema.register("Usuario 5555");
 			sistema.getSistema();
 			break;
 		case 0:
