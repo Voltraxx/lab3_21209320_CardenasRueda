@@ -7,6 +7,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 	String nombre;
 	ArrayList<Drive_21209320_CardenasRueda> drives;
 	ArrayList<User_21209320_CardenasRueda> usuarios;
+	String log = "";
 	
 	public FileSystem_21209320_CardenasRueda() {
 	}
@@ -47,6 +48,23 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
+	public void login(String nombre) {
+		boolean valor = false;
+		
+		for (int i=0; i<usuarios.size(); i++) {
+			if (usuarios.get(i).getNombre() == nombre) {
+				valor = true;
+			}
+		}
+		if (valor == true) {
+			log = nombre;
+		}
+		else {
+			System.out.println("El usuario no existe");
+		}
+	}
+	
+	
 	@Override
 	public void getSistema() {
 		System.out.println("Sistema: " + nombre);
@@ -64,6 +82,9 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 				System.out.println(usuarios.get(i).getNombre());
 			}
 		}
+		System.out.println();
+		System.out.println("Log: ");
+		System.out.println(log);
 	}
 	
 }

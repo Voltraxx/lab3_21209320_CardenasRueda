@@ -25,6 +25,7 @@ public class Main {
 			sistema.register("Usuario2");
 			sistema.register("Primer Usuario"); //No debería agregarlo
 			sistema.register("Usuario 5555");
+			sistema.login("Primer Usuario");
 			sistema.getSistema();
 			break;
 		case 0:
