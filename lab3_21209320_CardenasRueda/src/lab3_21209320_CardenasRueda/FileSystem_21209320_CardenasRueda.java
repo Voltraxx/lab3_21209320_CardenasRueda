@@ -64,6 +64,10 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
+	public void logout() {
+		log = "";
+	}
+	
 	
 	@Override
 	public void getSistema() {
