@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21209320_CardenasRueda{
 
 	String nombre;
+	String ruta = "";
+	String raiz = "";
 	ArrayList<Drive_21209320_CardenasRueda> drives;
 	ArrayList<User_21209320_CardenasRueda> usuarios;
 	String log = "";
@@ -68,6 +70,27 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		log = "";
 	}
 	
+	public void switchDrive(String letra) {
+		if (log != "" && log != null) {
+			boolean valor = false;
+			for (int i=0; i<drives.size(); i++) {
+				if (drives.get(i).getLetra() == letra) {
+					valor = true;
+				}
+			}
+			if (valor == true) {
+				ruta = letra + ":/";
+				raiz = letra;
+			}
+			else {
+				System.out.println("El drive no existe");
+			}
+			
+		}
+		else {
+			System.out.println("No hay usuario logueado");
+		}
+	}
 	
 	@Override
 	public void getSistema() {
@@ -89,6 +112,9 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		System.out.println();
 		System.out.println("Log: ");
 		System.out.println(log);
+		System.out.println();
+		System.out.println("Ruta: " + ruta);
 	}
 	
 }
+

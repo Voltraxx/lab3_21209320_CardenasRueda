@@ -26,7 +26,7 @@ public class Main {
 			sistema.register("Primer Usuario"); //No debería agregarlo
 			sistema.register("Usuario 5555");
 			sistema.login("Primer Usuario");
-			sistema.logout(); //Debería entregar log vacío
+			sistema.switchDrive("D");
 			sistema.getSistema();
 			break;
 		case 0:
