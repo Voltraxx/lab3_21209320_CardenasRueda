@@ -27,6 +27,12 @@ public class Main {
 			sistema.register("Usuario 5555");
 			sistema.login("Primer Usuario");
 			sistema.switchDrive("D");
+			sistema.mkdir("Carpeta1", 'c', 'h');
+			sistema.mkdir("Carpeta2", 'c', 'h');
+			sistema.mkdir("Carpeta3", 'c', 'h');
+			sistema.mkdir("Carpeta4", 'c', 'h');
+			sistema.mkdir("Carpeta2", 'c', 'h');
+			sistema.mkdir("Carpeta6", 'c', 'h');
 			sistema.getSistema();
 			break;
 		case 0:

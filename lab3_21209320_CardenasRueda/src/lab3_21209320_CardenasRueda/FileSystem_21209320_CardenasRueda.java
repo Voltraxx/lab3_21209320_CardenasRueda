@@ -9,6 +9,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 	String raiz = "";
 	ArrayList<Drive_21209320_CardenasRueda> drives;
 	ArrayList<User_21209320_CardenasRueda> usuarios;
+	ArrayList<Folder_21209320_CardenasRueda> carpetas;
 	String log = "";
 	
 	public FileSystem_21209320_CardenasRueda() {
@@ -18,6 +19,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		this.nombre = nombre;
 		this.drives = new ArrayList<>();
 		this.usuarios = new ArrayList<>();
+		this.carpetas = new ArrayList<>();
 	}
 	
 	public void addDrive(String letra, String name, int almacenamiento) {
@@ -92,10 +94,29 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
+	public void mkdir(String nombre, char atr1, char atr2) {
+		
+		boolean valor = false;
+		Folder_21209320_CardenasRueda carpeta = new Folder_21209320_CardenasRueda(nombre, atr1, atr2);
+		
+		carpeta.setRuta(ruta);
+		carpeta.setUsuario(log);
+		
+		for (int i=0; i<carpetas.size(); i++) {
+			if (carpetas.get(i).getNombre() == carpeta.nombre && carpetas.get(i).getRuta() == carpeta.ruta) {
+				valor = true;
+			}
+		}
+		if (valor == false) {
+			carpetas.add(carpeta);
+		}
+		
+	}
+	
+	
 	@Override
 	public void getSistema() {
-		System.out.println("Sistema: " + nombre);
-		System.out.println();
+		System.out.println("Sistema: " + "\n" + nombre + "\n");
 		System.out.println("Drives: ");
 		if (drives!=null) { //Esto evita problemas si el array está vacío
 			for (int i=0; i<drives.size(); i++) {
@@ -110,10 +131,15 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 			}
 		}
 		System.out.println();
-		System.out.println("Log: ");
-		System.out.println(log);
+		System.out.println("Log: " + "\n" + log + "\n");
+		System.out.println("Carpetas: ");
+		if (carpetas!=null) {
+			for (int i=0; i<carpetas.size(); i++) {
+				System.out.println(carpetas.get(i).getNombre() + ", " + carpetas.get(i).getRuta() + ", " + carpetas.get(i).getUsuario() + ", " + carpetas.get(i).getAtr1() + ", " + carpetas.get(i).getAtr2());
+			}
+		}
 		System.out.println();
-		System.out.println("Ruta: " + ruta);
+		System.out.println("Ruta: " + "\n" + ruta);
 	}
 	
 }

@@ -9,9 +9,8 @@ public class Console_21209320_CardenasRueda {
 	Scanner scanner = new Scanner(System.in);
 	int opcion;
 	
+	
 	// Métodos
-	
-	
 	public void imprimirOpciones() {
 		
 		System.out.println("## Bienvenido al menú del sistema ##");
