@@ -90,6 +90,11 @@ public class Console_21209320_CardenasRueda {
 					char atr2 = scanner.next().charAt(0);
 					sistema.mkdir(nombreC, atr1, atr2);
 					break;
+				case 7:
+					System.out.print("Ingrese comando: ");
+					String comando = scanner.next();
+					scanner.nextLine();
+					sistema.cd(comando);
 				default:
 				}
 				break;

@@ -113,6 +113,27 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		
 	}
 	
+	public void cd(String comando) {
+		
+		String nuevaRuta = "";
+		
+		if (comando.equals("/")) {
+			ruta = raiz + ":/";
+		}else if (comando.equals("..")) {
+			String[] aux = ruta.split("/");
+			for (int j=0; j<(aux.length-1); j++) {
+				nuevaRuta = nuevaRuta + aux[j] + "/"; 
+			}
+			ruta = nuevaRuta;
+		}else {
+			for (int i=0; i<carpetas.size(); i++) {
+				if (carpetas.get(i).getNombre().equals(comando) && carpetas.get(i).getRuta().equals(ruta)) {
+					ruta = ruta + comando + "/";
+				}
+			}
+		}
+	}
+	
 	@Override
 	public void getSistema() {
 		System.out.println("Sistema: " + "\n" + nombre + "\n");
