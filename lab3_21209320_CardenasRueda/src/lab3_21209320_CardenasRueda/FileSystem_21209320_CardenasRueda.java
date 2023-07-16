@@ -28,7 +28,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		Drive_21209320_CardenasRueda drive = new Drive_21209320_CardenasRueda(letra, name, almacenamiento);
 		
 		for (int i=0; i<drives.size(); i++) {
-			if (drives.get(i).getLetra() == drive.letra) {
+			if (drives.get(i).getLetra().equals(drive.getLetra())) {
 				valor = true;
 			}
 		}
@@ -43,7 +43,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		User_21209320_CardenasRueda usuario = new User_21209320_CardenasRueda(nombre);
 		
 		for (int i=0; i<usuarios.size(); i++) {
-			if (usuarios.get(i).getNombre() == usuario.nombre) {
+			if (usuarios.get(i).getNombre().equals(usuario.getNombre())) {
 				valor = true;
 			}
 		}
@@ -56,7 +56,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		boolean valor = false;
 		
 		for (int i=0; i<usuarios.size(); i++) {
-			if (usuarios.get(i).getNombre() == nombre) {
+			if (usuarios.get(i).getNombre().equals(nombre)) {
 				valor = true;
 			}
 		}
@@ -76,7 +76,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		if (log != "" && log != null) {
 			boolean valor = false;
 			for (int i=0; i<drives.size(); i++) {
-				if (drives.get(i).getLetra() == letra) {
+				if (drives.get(i).getLetra().equals(letra)) {
 					valor = true;
 				}
 			}
@@ -103,7 +103,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		carpeta.setUsuario(log);
 		
 		for (int i=0; i<carpetas.size(); i++) {
-			if (carpetas.get(i).getNombre() == carpeta.nombre && carpetas.get(i).getRuta() == carpeta.ruta) {
+			if (carpetas.get(i).getNombre().equals(carpeta.getNombre()) && carpetas.get(i).getRuta().equals(carpeta.getRuta())) {
 				valor = true;
 			}
 		}
@@ -112,7 +112,6 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 		
 	}
-	
 	
 	@Override
 	public void getSistema() {
@@ -139,8 +138,7 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 			}
 		}
 		System.out.println();
-		System.out.println("Ruta: " + "\n" + ruta);
+		System.out.println("Ruta: " + "\n" + ruta + "\n");
 	}
-	
 }
 
