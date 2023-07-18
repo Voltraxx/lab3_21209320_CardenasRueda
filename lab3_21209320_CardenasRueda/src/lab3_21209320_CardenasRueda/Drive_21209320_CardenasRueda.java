@@ -13,18 +13,6 @@ public class Drive_21209320_CardenasRueda implements Drive_Interfaz_21209320_Car
 	}
 
 	@Override
-	public void existeDrive() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void formatearDrive() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public String getLetra() {
 		return letra;
 	}
