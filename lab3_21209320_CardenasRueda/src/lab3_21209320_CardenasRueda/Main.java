@@ -1,12 +1,10 @@
 //La versión de JDK utilizada es la versión 11.0.19+7 (11)
+//No se ha agregado autor a las clases ya que se asume que yo, Juan Pablo Cárdenas Rueda, he creado todo este proyecto
 
 package lab3_21209320_CardenasRueda;
 
 /**
- * 
- * @author juanp
- *
- * clase principal para ejecutar las acciones. Crea un objeto consola para iniciar el proceso
+ * Clase principal para ejecutar las acciones. Crea un objeto consola para iniciar el proceso
  */
 public class Main {
 

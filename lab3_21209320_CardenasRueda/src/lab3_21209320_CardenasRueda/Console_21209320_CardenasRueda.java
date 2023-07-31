@@ -3,24 +3,20 @@ package lab3_21209320_CardenasRueda;
 import java.util.Scanner;
 
 /**
- * 
- * @author juanp
- *
- * Esta clase funciona como la consola para interactuar con el usuario
- *
+ * Esta clase es la consola con la cual el usuario podrá interactuar mediante la terminal, haciendo uso de inputs y modificaciones al sistema mediante este
  */
 public class Console_21209320_CardenasRueda {
 	
-	Scanner scanner = new Scanner(System.in); //scanner para introducir inputs del usuario
-	int opcionInt; //almacena datos int del scanner
-	String opcionStr; //almacena datos String del usuario
-	FileSystem_21209320_CardenasRueda sistema; //objeto de tipo filesystem
+	Scanner scanner = new Scanner(System.in); 
+	int opcionInt; 
+	String opcionStr; 
+	FileSystem_21209320_CardenasRueda sistema;
 	
 	/**
-	 * <p> Imprime las operaciones principales del sistema
+	 * <p> Imprime las opciones principales de un sistema, en donde el usuario podrá crear, modificar o imprimir un sistema
 	 * </p>
-	 * 
-	 * @param null
+	 * @param null (no posee entradas)
+	 * @return void
 	 */
 	public void imprimirOpciones() {
 		System.out.println("## Bienvenido al menú del sistema ##");
@@ -35,10 +31,10 @@ public class Console_21209320_CardenasRueda {
 	}
 	
 	/**
-	 * <p> Imprime las operaciones secundarias del sistema si este elige la opcion 2 del menu principal
+	 * <p> Imprime las operaciones secundarias del sistema si este elige la opcion 2 del menu principal (modificar sistema)
 	 * </p>
-	 * 
-	 * @param null
+	 * @param null (no posee entradas)
+	 * @return void
 	 */
 	public void imprimirOpcionesEdit() {
 		System.out.println("1.- Añadir drive");
@@ -51,14 +47,14 @@ public class Console_21209320_CardenasRueda {
 	}
 	
 	/**
-	 * <p> Ejecuta un comando para que el usuario pueda digitar su input y así trabajar en el sistema
+	 * <p> Ejecuta un comando para que el usuario pueda digitar su input y así trabajar en el sistema, pudiendo elegir entre diversas opciones dependiendo del menú desplegado y/o opciones escogias anteriormente
 	 * </p>
-	 * 
 	 * @param null
+	 * @return void
 	 */
 	public void ingresarOpcion() {
 		do{
-			imprimirOpciones();
+			imprimirOpciones(); //Imprime las opciones principales
 			System.out.print("Ingrese su opción: ");
 			opcionInt = scanner.nextInt();
 			switch(opcionInt) {
@@ -70,7 +66,7 @@ public class Console_21209320_CardenasRueda {
 				System.out.println("Se creó el sistema de nombre " + opcionStr);
 				break;
 			case 2:
-				imprimirOpcionesEdit();
+				imprimirOpcionesEdit(); //Imprime las opciones secundarias (caso 2 del menú principal: Editar Sistema)
 				System.out.print("Ingrese su opción: ");
 				opcionInt = scanner.nextInt();
 				switch(opcionInt) {
@@ -143,6 +139,6 @@ public class Console_21209320_CardenasRueda {
 				System.out.println("No existe esa opción\n");
 				break;
 			}
-		}while(opcionInt!=0);
+		}while(opcionInt!=0); //Evita que se salga del programa hasta que se ingrese el "0" como opción en el menú principal
 	}
 }

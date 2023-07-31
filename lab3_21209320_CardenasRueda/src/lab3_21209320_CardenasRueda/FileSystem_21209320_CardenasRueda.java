@@ -3,24 +3,20 @@ package lab3_21209320_CardenasRueda;
 import java.util.ArrayList;
 
 /**
- * 
- * @author juanp
- *
- * Esta clase implementa a la interfaz User_Interfaz_21209320_CardenasRueda
- *
+ * Entidad principal que representa al sistema de archivos del OS. Almacena todos los datos relativos a las otras entidades
  */
 public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21209320_CardenasRueda{
 
-	String nombre; // nombre del sistema
-	String ruta = ""; // drive fijado del sistema
-	String raiz = ""; // ruta actual en la que se está trabajando
-	ArrayList<Drive_21209320_CardenasRueda> drives; // drives del sistema
-	ArrayList<User_21209320_CardenasRueda> usuarios; // usuarios del sistema
-	ArrayList<Folder_21209320_CardenasRueda> carpetas; // carpetas del sistema
+	String nombre;
+	String ruta = ""; 
+	String raiz = ""; 
+	ArrayList<Drive_21209320_CardenasRueda> drives; 
+	ArrayList<User_21209320_CardenasRueda> usuarios; 
+	ArrayList<Folder_21209320_CardenasRueda> carpetas; 
 	String log = "";
 	
 	/**
-	 * <p> Constructor de la presente clase FileSystem
+	 * <p> Constructor de sistema (vacío)
 	 * </p>
 	 * @param null
 	 */
@@ -28,9 +24,9 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 	}
 	
 	/**
-	 * <p> Constructor de la presente clase FileSystem. Este constructor es una sobrecarga del método constructor
+	 * <p> Constructor de la presente clase FileSystem. Este constructor es una sobrecarga del método constructor y crea un sistema dado un nombre
 	 * </p>
-	 * @param nombre del sistema
+	 * @param nombre (String) > nombre del sistema a crear
 	 */
 	public FileSystem_21209320_CardenasRueda(String nombre) {
 		this.nombre = nombre;
@@ -39,12 +35,15 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		this.carpetas = new ArrayList<>();
 	}
 	
-	/**
-	 * <p> método que añade un drive al arraylist del sistema
-	 * </p>
-	 * @param letra, nombre y almacenamiento del drive
-	 */
 	@Override
+	/**
+	 * <p> Método para añadir un drive a un sistema respetando que sea único
+	 * </p>
+	 * @param letra (String) > Letra del drive
+	 * @param name (String) > Hace referencia al nombre del drive
+	 * @param almacenamiento (String) > capacidad de almacenamiento de una unidad drive
+	 * @return void
+	 */
 	public void addDrive(String letra, String name, int almacenamiento) {
 		
 		boolean valor = false;
@@ -60,12 +59,13 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
-	/**
-	 * <p> método que añade un usuario al arraylist del sistema
-	 * </p>
-	 * @param nombre del usuario a registrar
-	 */
 	@Override
+	/**
+	 * <p> Método para registrar un usuario en el sistema respetando que no exista este anteriormente
+	 * </p>
+	 * @param nombre (String) > Nombre del usuario a registrar
+	 * @return void
+	 */
 	public void register(String nombre) {
 		
 		boolean valor = false;
@@ -81,12 +81,13 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
-	/**
-	 * <p> método que loguea a un usuario en el sistema
-	 * </p>
-	 * @param usuario existente
-	 */
 	@Override
+	/**
+	 * <p> Método para loguearse en un usuario YA EXISTENTE
+	 * </p>
+	 * @param nombre (String) > Nombre del usuario al cual loguearse
+	 * @return void
+	 */
 	public void login(String nombre) {
 		boolean valor = false;
 		
@@ -103,22 +104,24 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
+	@Override
 	/**
-	 * <p> desloguea al usuario logueado
+	 * <p> Método para desloguearse de un usuario
 	 * </p>
 	 * @param null
+	 * @return void
 	 */
-	@Override
 	public void logout() {
 		log = "";
 	}
 	
-	/**
-	 * <p> fija una unidad con la cual trabajar en el sistema
-	 * </p>
-	 * @param letra del drive al cual fijar
-	 */
 	@Override
+	/**
+	 * <p> Método para fijar una unidad drive EXISTENTE en la cual realizar acciones
+	 * </p>
+	 * @param letra (String) > Letra del drive a fijar
+	 * @return void
+	 */
 	public void switchDrive(String letra) {
 		if (log != "" && log != null) {
 			boolean valor = false;
@@ -141,12 +144,15 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
-	/**
-	 * <p> crea una carpeta y la añade al arraylist del sistema
-	 * </p>
-	 * @param Nombre de la carpeta y sus 2 atributos de seguridad. Añade usuario y ruta internamente
-	 */
 	@Override
+	/**
+	 * <p> Método para crear una carpeta en la dirección actual
+	 * </p>
+	 * @param nombre (String) > Nombre de la carpeta a crear
+	 * @param atr1 (char) > atributo de seguridad de la carpeta a crear
+	 * @param atr2 (char) > atributo de seguridad de la carpeta a crear
+	 * @return void
+	 */
 	public void mkdir(String nombre, char atr1, char atr2) {
 		
 		boolean valor = false;
@@ -166,12 +172,13 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		
 	}
 	
-	/**
-	 * <p> permite cambiarse del directorioa ctual mediante comandos. SOLO PUEDE AVANZAR A DIRECTORIOS ACTUALMENTE VISIBLES
-	 * </p>
-	 * @param comando "..", "/", o un folder actualmente visible
-	 */
 	@Override
+	/**
+	 * <p> Método para cambiar de directorio en el sistema (cambiar de ruta)
+	 * </p>
+	 * @param comando > comando para dirigirse a una nueva dirección (".." para devolverse, "/" para ir a raiz, "nombreArchivo" para dirigirse a la dirección de "nombreArchivo")
+	 * @return void
+	 */
 	public void cd(String comando) {
 		
 		String nuevaRuta = "";
@@ -193,12 +200,8 @@ public class FileSystem_21209320_CardenasRueda implements FileSystem_interfaz_21
 		}
 	}
 	
-	/**
-	 * <p> Imprime por consola el sistema actual, con todas sus modificaciones hechas hasta el momento
-	 * </p>
-	 * @param null
-	 */
 	@Override
+	
 	public void getSistema() {
 		System.out.println("Sistema: " + "\n" + nombre + "\n");
 		System.out.println("Drives: ");

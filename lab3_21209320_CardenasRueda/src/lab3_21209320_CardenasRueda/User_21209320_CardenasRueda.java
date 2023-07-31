@@ -1,13 +1,8 @@
 package lab3_21209320_CardenasRueda;
 
 /**
- * 
- * @author juanp
- *
  * Esta clase implementa a la interfaz User_Interfaz_21209320_CardenasRueda
- *
  */
-
 public class User_21209320_CardenasRueda implements User_Interfaz_21209320_CardenasRueda{
 	
 	String nombre;
@@ -15,19 +10,19 @@ public class User_21209320_CardenasRueda implements User_Interfaz_21209320_Carde
 	/**
 	 * <p> Constructor de la presente clase User
 	 * </p>
-	 * @param El nombre del usuario
+	 * @param nombre (String) > El nombre del usuario a construir
 	 */
 	public User_21209320_CardenasRueda(String nombre){
 		this.nombre = nombre;
 	}
 	
-	/**
-	 * <p> Este método permite retornar el nombre que posee el usuario una vez ha sido instanciado
-	 * </p>
-	 * 
-	 * @return El nombre del usuario
-	 */
 	@Override
+	/**
+	 * <p> Metodo para obtener el nombre de un usuario
+	 * </p>
+	 * @param null
+	 * @return String > nombre del usuario escogido
+	 */
 	public String getNombre() {
 		return nombre;
 	}
